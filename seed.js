@@ -65,38 +65,38 @@ function getRandom(num) {
 
 // Has many relationships
 // Users
-_(10).times(function () {
+_(getRandom(10)).times(function () {
   var user = Factory.build('user') 
   db.users.push(user)
 
   // Posts
-  _(10).times(function() {
+  _(getRandom(10)).times(function() {
     // userId not set in create so that it appears as the last
     // attribute
     var post = Factory.build('post', {userId: user.id})
     db.posts.push(post)
     
     // Comments
-    _(5).times(function () {
+    _(getRandom(5)).times(function () {
       var comment = Factory.build('comment', {postId: post.id})
       db.comments.push(comment)
     })
   })
 
   // Albums
-  _(10).times(function() {
+  _(getRandom(10)).times(function() {
     var album = Factory.build('album', {userId: user.id})
     db.albums.push(album)
 
     // Photos
-    _(50).times(function() {
+    _(getRandom(50)).times(function() {
       var photo = Factory.build('photo', {albumId: album.id})
       db.photos.push(photo)
     })
   })
 
   // Todos
-  _(20).times(function() {
+  _(getRandom(20)).times(function() {
     var todo = Factory.build('todo', {userId: user.id})
     db.todos.push(todo)
   })
