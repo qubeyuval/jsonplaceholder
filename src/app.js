@@ -1,6 +1,6 @@
 const jsonServer = require('json-server')
 const clone = require('clone')
-const data = require('../data.json')
+const data = require('../db.json')
 
 const app = jsonServer.create()
 const router = jsonServer.router(clone(data))
