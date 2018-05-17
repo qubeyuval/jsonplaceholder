@@ -59,6 +59,10 @@ Factory.define('user')
     })
   })
 
+function getRandom(num) {
+  return Math.floor(Math.random() * num) + 1;
+}
+
 // Has many relationships
 // Users
 _(10).times(function () {
